@@ -5,13 +5,18 @@
 
 <ion-list lines="full">
   <ion-list-header>{{list.title}}</ion-list-header>
+  <ion-item *ngIf="list.tasks.length ==  0">
+    <p><strong>Nenhuma tarefa encontrada</strong></p>
+  </ion-item>
   <ion-item *ngFor="let task of list.tasks" >
+      <ion-button slot="start" fill="clear" (click)="toogleDone(task)">
     <ion-icon name="checkmark-circle" slot="start" *ngIf="task.done" ></ion-icon>
     <ion-icon name="radio-button-off" slot="start" *ngIf="!task.done" ></ion-icon>
+    </ion-button>
     <!--<ion-icon name="checkmark-circle" slot="start"></ion-icon>-->
     {{task.title}}
     <ion-button slot="end" fill="clear">
-      <ion-icon name="trash" color="danger"></ion-icon>
+      <ion-icon name="trash" color="danger" (click)="removeTask(task)" ></ion-icon>
     </ion-button>
   
   </ion-item>

@@ -21,4 +21,31 @@ export class HomePage {
         tasks
         );
     }
+
+  addTask(task: Task) { // Adicionar Tarefa
+
+  }
+
+  removeTask(task: Task) { // Remover Tafefa
+
+    const index = this.list.tasks.indexOf(task);
+    this.list.tasks.splice(index, 1);
+
+  }
+
+  toogleDone(task: Task) {  // Marcar uma tarefa feita
+  if (task.done) {
+  task.done = false;
+  } else {
+  task.done = true;
+  }
+
+  }
+
+  markAsUndone(task: Task) { // Marcar tarefa incompleta
+  task.done = false;
+
+  }
+
+
 }
