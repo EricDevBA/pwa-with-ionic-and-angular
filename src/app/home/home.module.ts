@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
-import { DataService } from './data.service';
 
 @NgModule({
   imports: [
@@ -19,7 +18,6 @@ import { DataService } from './data.service';
       }
     ])
   ],
-  providers: [DataService],
   declarations: [HomePage]
 })
 export class HomePageModule {}
